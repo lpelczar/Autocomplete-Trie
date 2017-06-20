@@ -13,7 +13,7 @@ public class Main {
         Path worldListPath = new File("assets/wordList.txt").toPath();
         List wordList = Files.readAllLines(worldListPath);
 
-        AutoComplete ac = new AutoComplete(wordList);
+        AutoComplete ac = new AutoComplete();
 
         // sample stuff here
         ac.autoComplete("a", 5);

@@ -8,7 +8,7 @@
    <artifactId>java-tries</artifactId>
    <version>1.0-SNAPSHOT</version>
    <packaging>jar</packaging>
-   <name>Javs Trie</name>
+   <name>Java Tries</name>
 
    <properties>
       <version.java>1.8</version.java>
