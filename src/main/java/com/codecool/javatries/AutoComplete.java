@@ -15,7 +15,7 @@ public class AutoComplete {
     }
 
     /**
-     * Adds a word to the Trie
+     * Adds a word to the Trie.
      * @param wordToAdd
      */
     public void addWord(String wordToAdd) {
@@ -23,9 +23,9 @@ public class AutoComplete {
     }
 
     /**
-     * Returns the possible completions of baseChars String from the Trie
-     * @param baseChars
-     * @return possible completions
+     * Returns the possible completions of baseChars String from the Trie.
+     * @param baseChars The String to autocomplete.
+     * @return possible completions. An empty list if there are none.
      */
     public List<String> autoComplete(String baseChars) {
         List<String> words = new ArrayList<>();
