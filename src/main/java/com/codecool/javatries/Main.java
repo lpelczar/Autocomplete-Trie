@@ -11,13 +11,14 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         Path worldListPath = new File("assets/wordList.txt").toPath();
-        List wordList = Files.readAllLines(worldListPath);
+        List<String> wordList = Files.readAllLines(worldListPath);
 
         AutoComplete ac = new AutoComplete();
+        for (String word : wordList) {
+            ac.addWord(word);
+        }
 
-        // sample stuff here
-        ac.autoComplete("a", 5);
-
+        System.out.println(ac.autoComplete("spectro"));
         System.out.println("done");
     }
 }

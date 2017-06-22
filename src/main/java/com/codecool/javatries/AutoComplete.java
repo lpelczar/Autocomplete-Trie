@@ -1,24 +1,46 @@
 package com.codecool.javatries;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AutoComplete {
 
+    private TrieDataNode root;
+
+    /**
+     * Starts a new Trie with dummy root data "-"
+     */
     public AutoComplete() {
-        // TODO build a Trie here
+        root = new TrieDataNode('-');
     }
 
+    /**
+     * Adds a word to the Trie
+     * @param wordToAdd
+     */
     public void addWord(String wordToAdd) {
-        // TODO adds a word to the Trie
-    }
-
-    public List<String> autoComplete(String baseChars, int maxResults) {
-        // TODO return here the possible completions of baseChars, at most maxResults
-        return null;
-    }
-
-    public boolean removeWord(String wordToRemove) {
         // TODO
+    }
+
+    /**
+     * Returns the possible completions of baseChars String from the Trie
+     * @param baseChars
+     * @return possible completions
+     */
+    public List<String> autoComplete(String baseChars) {
+        List<String> words = new ArrayList<>();
+        // TODO
+        return words;
+    }
+
+    /**
+     * Removes a word from the Trie
+     * @param wordToRemove
+     * @return true if the removal was successful
+     */
+    public boolean removeWord(String wordToRemove) {
+        // TODO -- Optional homework
         return false;
     }
+
 }
