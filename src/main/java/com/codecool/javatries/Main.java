@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        Path worldListPath = new File("assets/wordList.txt").toPath();
+        Path worldListPath = new File("assets/wordlist.txt").toPath();
         List<String> wordList = Files.readAllLines(worldListPath);
 
         AutoComplete ac = new AutoComplete();

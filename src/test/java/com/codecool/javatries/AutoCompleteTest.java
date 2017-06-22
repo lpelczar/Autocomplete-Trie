@@ -15,7 +15,7 @@ class AutoCompleteTest {
 
     @Test
     void autoComplete() throws IOException {
-        Path worldListPath = new File("assets/wordList.txt").toPath();
+        Path worldListPath = new File("assets/wordlist.txt").toPath();
         List<String> wordList = Files.readAllLines(worldListPath);
         AutoComplete ac = new AutoComplete();
         for (String str : wordList) {
