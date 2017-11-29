@@ -18,6 +18,7 @@ public class Main {
             ac.addWord(word);
         }
 
+        // Try to write tests to verify your code!
         System.out.println(ac.autoComplete("spectro"));
         System.out.println("done");
     }

@@ -16,7 +16,6 @@ public class AutoComplete {
 
     /**
      * Adds a word to the Trie.
-     * @param wordToAdd
      */
     public void addWord(String wordToAdd) {
         // TODO
@@ -35,7 +34,6 @@ public class AutoComplete {
 
     /**
      * Removes a word from the Trie
-     * @param wordToRemove
      * @return true if the removal was successful
      */
     public boolean removeWord(String wordToRemove) {

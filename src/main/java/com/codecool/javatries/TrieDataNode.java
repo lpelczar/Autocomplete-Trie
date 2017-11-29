@@ -7,16 +7,12 @@ public class TrieDataNode {
 
     /**
      * Initializes a TrieDataNode with its data
-     * @param data
+     * @param data The data in this node
      */
     public TrieDataNode(char data) {
         this.data = data;
     }
 
-    /**
-     * Getter for data
-     * @return data
-     */
     public char getData() {
         return data;
     }

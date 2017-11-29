@@ -1,1 +1,4 @@
-# enterprise-java-tries
+# Tries exercise
+
+See Canvas for details!
+
