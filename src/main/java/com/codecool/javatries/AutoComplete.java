@@ -1,7 +1,6 @@
 package com.codecool.javatries;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class AutoComplete {
 
@@ -18,7 +17,15 @@ public class AutoComplete {
      * Adds a word to the Trie.
      */
     public void addWord(String wordToAdd) {
-        // TODO
+        TrieDataNode currentNode = root;
+        for (char letter : wordToAdd.toCharArray()) {
+            if (currentNode.getChildren().containsKey(letter)) {
+                currentNode = currentNode.getChildren().get(letter);
+            } else {
+                currentNode = currentNode.getChildren().put(letter, new TrieDataNode(letter));
+            }
+        }
+        currentNode.setEndOfWord(true);
     }
 
     /**
@@ -27,9 +34,7 @@ public class AutoComplete {
      * @return possible completions. An empty list if there are none.
      */
     public List<String> autoComplete(String baseChars) {
-        List<String> words = new ArrayList<>();
-        // TODO
-        return words;
+        //
     }
 
     /**
