@@ -34,7 +34,14 @@ public class AutoComplete {
      * @return possible completions. An empty list if there are none.
      */
     public List<String> autoComplete(String baseChars) {
-        //
+        TrieDataNode current = root;
+        for (char letter : baseChars.toCharArray()) {
+            if (!current.getChildren().containsKey(letter)) {
+                return Collections.emptyList();
+            }
+            current = current.getChildren().get(letter);
+        }
+        return getAllWords(current);
     }
 
     /**
