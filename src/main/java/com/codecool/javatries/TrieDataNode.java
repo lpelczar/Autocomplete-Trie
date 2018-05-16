@@ -6,7 +6,7 @@ import java.util.Map;
 public class TrieDataNode {
 
     private char letter;
-    private Map<Character, TrieDataNode> children = new HashMap<>();
+    private Map<Character, TrieDataNode> children;
     private boolean isEndOfWord;
 
     /**
@@ -15,6 +15,7 @@ public class TrieDataNode {
      */
     public TrieDataNode(char letter) {
         this.letter = letter;
+        this.children = new HashMap<>();
     }
 
     public char getLetter() {
