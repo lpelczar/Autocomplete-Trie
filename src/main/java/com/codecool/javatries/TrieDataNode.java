@@ -1,25 +1,44 @@
 package com.codecool.javatries;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TrieDataNode {
 
-    private char data;
-    // TODO add further members as needed
+    private char letter;
+    private Map<Character, TrieDataNode> children = new HashMap<>();
+    private boolean isEndOfWord;
 
     /**
-     * Initializes a TrieDataNode with its data
-     * @param data The data in this node
+     * Initializes a TrieDataNode with its letter
+     * @param letter The letter in this node
      */
-    public TrieDataNode(char data) {
-        this.data = data;
+    public TrieDataNode(char letter) {
+        this.letter = letter;
     }
 
-    public char getData() {
-        return data;
+    public char getLetter() {
+        return letter;
     }
 
     @Override
     public String toString() {
-        return Character.toString(data);
+        return Character.toString(letter);
     }
 
+    public Map<Character, TrieDataNode> getChildren() {
+        return children;
+    }
+
+    public void setChildren(Map<Character, TrieDataNode> children) {
+        this.children = children;
+    }
+
+    public boolean isEndOfWord() {
+        return isEndOfWord;
+    }
+
+    public void setEndOfWord(boolean endOfWord) {
+        isEndOfWord = endOfWord;
+    }
 }
