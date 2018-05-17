@@ -14,11 +14,11 @@ public class Main {
         List<String> wordList = Files.readAllLines(worldListPath);
 
         AutoComplete ac = new AutoComplete();
+        ac.addWord("test");
         for (String word : wordList) {
             ac.addWord(word);
         }
 
-        // Try to write tests to verify your code!
         System.out.println(ac.autoComplete("spectro"));
         System.out.println("done");
     }

@@ -1,7 +1,5 @@
 package com.codecool.javatries;
 
-import sun.text.normalizer.Trie;
-
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -9,16 +7,10 @@ public class AutoComplete {
 
     private TrieDataNode root;
 
-    /**
-     * Starts a new Trie with dummy root data "-"
-     */
     public AutoComplete() {
         root = new TrieDataNode('-');
     }
 
-    /**
-     * Adds a word to the Trie.
-     */
     public void addWord(String wordToAdd) {
         TrieDataNode currentNode = root;
         for (char letter : wordToAdd.toCharArray()) {
@@ -33,24 +25,27 @@ public class AutoComplete {
         currentNode.setEndOfWord(true);
     }
 
-    /**
-     * Returns the possible completions of baseChars String from the Trie.
-     * @param baseChars The String to autocomplete.
-     * @return possible completions. An empty list if there are none.
-     */
     public List<String> autoComplete(String baseChars) {
 
+        StringBuilder stringBuilder = new StringBuilder();
         TrieDataNode current = root;
         for (char letter : baseChars.toCharArray()) {
-            if (!current.getChildren().containsKey(letter)) {
+            if (!current.getChildren().containsKey(Character.toUpperCase(letter)) &&
+                !current.getChildren().containsKey(Character.toLowerCase(letter))) {
                 return Collections.emptyList();
             }
-            current = current.getChildren().get(letter);
+            if (current.getChildren().get(Character.toUpperCase(letter)) != null) {
+                current = current.getChildren().get(Character.toUpperCase(letter));
+                stringBuilder.append(Character.toUpperCase(letter));
+            } else {
+                current = current.getChildren().get(Character.toLowerCase(letter));
+                stringBuilder.append(Character.toLowerCase(letter));
+            }
         }
         if (current.getChildren().entrySet().isEmpty()) {
             return Collections.singletonList(baseChars);
         }
-        return getAllWords(current, baseChars);
+        return getAllWords(current, stringBuilder.toString());
     }
 
     private List<String> getAllWords(TrieDataNode current, String baseChars) {
@@ -65,10 +60,6 @@ public class AutoComplete {
         return results;
     }
 
-    /**
-     * Removes a word from the Trie
-     * @return true if the removal was successful
-     */
     public boolean removeWord(String wordToRemove) {
         return remove(root, wordToRemove, 0);
     }
