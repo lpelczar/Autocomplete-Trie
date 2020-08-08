@@ -8,8 +8,6 @@ Tries (sometimes called prefix trees) is a variant of the tree where a single ch
 
 Each path down the tree represents a word. At the bottom of the tree null nodes (indicated by * in the image) denote the end of a word. The actual implementation of these nodes is usually a special type of node, for example TerminatingNode which inherits from TrieNode.
 
-![c1](http://i68.tinypic.com/9a1ikw.png)
-
 Your task is to implement the following:
 
 - Add code that implements such Trie data structure 
